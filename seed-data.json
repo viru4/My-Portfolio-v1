@@ -1,0 +1,146 @@
+{
+  "profile": {
+    "name": "Virendra Kumar",
+    "title": "Full Stack Developer",
+    "tagline": "I build scalable APIs, real-time systems, and responsive web apps with the MERN stack.",
+    "about": "I am a dedicated MERN Stack Developer with hands-on experience building full-stack web applications. I specialize in crafting robust backend RESTful APIs, implementing stateless authentication models, and building fluid, responsive React user interfaces.\n\nMy passion lies at the intersection of web technology and software architecture. I enjoy optimizing application performance, setting up automated deployment workflows, and writing clean, scalable code. When I'm not writing JavaScript, I explore cloud integrations and machine learning solutions.",
+    "statusBadge": {
+      "text": "Open to Work",
+      "visible": true
+    }
+  },
+  "projects": [
+    {
+      "title": "CraftCurio",
+      "description": "A full-stack ecommerce marketplace for unique, handcrafted art and collectibles. Features a custom product catalog, shopping cart state management, secure payment options, and user transaction histories.",
+      "highlights": [
+        "Architected secure database design for products, users, and order collections.",
+        "Implemented RESTful endpoints with Express.js to execute catalog searches and sorting filters.",
+        "Designed React frontend components with smooth UI transitions and state synchronizations."
+      ],
+      "techStack": ["React", "Node.js", "Express.js", "MongoDB", "Redux"],
+      "githubUrl": "https://github.com/virendra-kumar/craft-curio",
+      "demoUrl": "https://craft-curio.demo",
+      "displayOrder": 0,
+      "featured": true,
+      "isMLProject": false
+    },
+    {
+      "title": "QuickHire",
+      "description": "A dynamic hiring portal facilitating direct communication between recruiters and developers. Built to streamline job applications, candidate tracking, and resume document uploads.",
+      "highlights": [
+        "Implemented JWT-based authentication guards to protect private developer and recruiter portals.",
+        "Integrated dynamic resume uploading parsed and stored cleanly in local file systems.",
+        "Engineered live tracking states for recruiters to approve, hold, or reject candidate flows."
+      ],
+      "techStack": ["React", "Express.js", "Multer", "JWT", "MongoDB"],
+      "githubUrl": "https://github.com/virendra-kumar/quick-hire",
+      "demoUrl": "https://quick-hire.demo",
+      "displayOrder": 1,
+      "featured": false,
+      "isMLProject": false
+    },
+    {
+      "title": "House Price Prediction Engine",
+      "description": "A machine learning regression model designed to predict real estate valuation based on local socio-economic indicators and geographical factors.",
+      "highlights": [
+        "Preprocessed housing datasets, resolving missing values and scaling numerical attributes.",
+        "Trained multiple supervised linear regression models, optimizing mean squared error parameters.",
+        "Created an integration pipeline exposing predictions via a lightweight Node.js helper API."
+      ],
+      "techStack": ["Python", "scikit-learn", "Flask", "Pandas", "Node.js"],
+      "githubUrl": "https://github.com/virendra-kumar/house-price-prediction",
+      "demoUrl": "",
+      "displayOrder": 2,
+      "featured": false,
+      "isMLProject": true
+    }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "skills": ["JavaScript (ES6+)", "Python", "HTML5", "CSS3", "C++"],
+      "displayOrder": 0,
+      "isAdditional": false
+    },
+    {
+      "category": "Backend Development",
+      "skills": ["Node.js", "Express.js", "Flask", "FastAPI", "REST API", "API Integration", "Backend Development", "Authentication", "OpenAI API"],
+      "displayOrder": 1,
+      "isAdditional": false
+    },
+    {
+      "category": "Frontend Development",
+      "skills": ["React", "Redux Toolkit", "React Router", "Vanilla CSS", "Web Development", "Responsive Design"],
+      "displayOrder": 2,
+      "isAdditional": false
+    },
+    {
+      "category": "Databases & Tools",
+      "skills": ["MongoDB", "MySQL", "Database Design", "Git", "Postman", "NPM"],
+      "displayOrder": 3,
+      "isAdditional": false
+    },
+    {
+      "category": "Additional: Machine Learning & AI",
+      "skills": ["Machine Learning", "Artificial Intelligence", "Automation", "Supervised Learning", "Unsupervised Learning", "Regression Models", "Data Preprocessing", "scikit-learn", "Pandas", "NumPy"],
+      "displayOrder": 4,
+      "isAdditional": true
+    }
+  ],
+  "experience": [
+    {
+      "title": "MERN Full Stack Developer Intern",
+      "company": "Skill Risers Infotech Pvt. Ltd.",
+      "companyUrl": "https://skillrisers.com",
+      "duration": "3 Months · In-House",
+      "description": [
+        "Designed and implemented REST API endpoints processing thousands of queries with minimal latency.",
+        "Built a modular URL shortener service handling routing patterns and redirection triggers.",
+        "Acquired full-stack MERN expertise working in a collaborative environment on real-time software systems."
+      ],
+      "techStack": ["React.js", "Node.js", "Express.js", "MongoDB", "Postman"],
+      "displayOrder": 0
+    }
+  ],
+  "education": [
+    {
+      "period": "2022 — 2026",
+      "degree": "B.Tech in Computer Science & Engineering (AI & ML)",
+      "institution": "IMS Engineering College Ghaziabad (AKTU)",
+      "location": "India",
+      "score": "71%",
+      "displayOrder": 0
+    },
+    {
+      "period": "2020 — 2021",
+      "degree": "Intermediate Education (Class XII)",
+      "institution": "Savitri Vidya Vihar Inter College Ramjipuram Basti UP",
+      "location": "India",
+      "score": "82%",
+      "displayOrder": 1
+    },
+    {
+      "period": "2018 — 2019",
+      "degree": "High School (Class X)",
+      "institution": "Savitri Vidya Vihar Inter College Ramjipuram Basti UP",
+      "location": "India",
+      "score": "79%",
+      "displayOrder": 2
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Python Bootcamp & Programming Course",
+      "provider": "Udemy",
+      "url": "https://udemy.com"
+    }
+  ],
+  "social": {
+    "github": "https://github.com/virendra-kumar",
+    "linkedin": "https://linkedin.com/in/virendra-kumar",
+    "leetcode": "https://leetcode.com/virendra-kumar",
+    "email": "virendra.kumar@email.com",
+    "custom": []
+  }
+}

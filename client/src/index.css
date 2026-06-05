@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap');
+
+/* Design Token variables */
+:root {
+  /* Colors */
+  --color-bg-deep: #0a0a1a;
+  --color-bg-surface: #111127;
+  
+  --glass-bg: rgba(17, 17, 39, 0.45);
+  --glass-bg-hover: rgba(17, 17, 39, 0.60);
+  --glass-border: rgba(167, 139, 250, 0.12);
+  --glass-border-hover: rgba(167, 139, 250, 0.35);
+  --glass-inner-light: rgba(255, 255, 255, 0.05);
+
+  --color-accent-violet: #a78bfa;
+  --color-accent-indigo: #818cf8;
+  --color-accent-cyan: #22d3ee;
+  
+  --gradient-primary: linear-gradient(135deg, var(--color-accent-violet), var(--color-accent-indigo));
+  --gradient-glow: linear-gradient(135deg, var(--color-accent-violet), var(--color-accent-cyan), var(--color-accent-indigo));
+  
+  --text-primary: #a1a1b5;
+  --text-heading: #ededf0;
+  --text-muted: #6b6b80;
+
+  /* Fonts */
+  --font-headings: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(167, 139, 250, 0.3) transparent;
+}
+
+body {
+  background-color: var(--color-bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.75;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(167, 139, 250, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(167, 139, 250, 0.4);
+}
+
+/* Base Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headings);
+  color: var(--text-heading);
+}
+
+a {
+  color: var(--color-accent-violet);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--color-accent-indigo);
+}
+
+/* Glassmorphism Card style */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25),
+              inset 0 1px 0 var(--glass-inner-light);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 12px 40px 0 rgba(139, 92, 246, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+}
+
+/* Shimmer Buttons */
+.glass-btn {
+  background: var(--gradient-primary);
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 24px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.glass-btn:hover {
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+  transform: translateY(-1px);
+}
+
+.glass-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 30%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(30deg);
+  transition: none;
+}
+
+.glass-btn:hover::after {
+  left: 120%;
+  transition: all 0.6s ease-in-out;
+}
+
+/* Inputs */
+.glass-input {
+  background: rgba(10, 10, 26, 0.5);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  color: var(--text-heading);
+  padding: 12px 16px;
+  outline: none;
+  font-family: var(--font-body);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.glass-input:focus {
+  border-color: var(--color-accent-indigo);
+  box-shadow: 0 0 10px rgba(129, 140, 248, 0.2);
+}
+
+/* Spotlight Follower */
+.spotlight-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 50%),
+    rgba(139, 92, 246, 0.08),
+    transparent 80%
+  );
+  z-index: 1;
+}
+
+/* Navigation Dots */
+.nav-dot-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.nav-dot-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.nav-dot-item:hover, .nav-dot-item.active {
+  color: var(--text-heading);
+}
+
+.nav-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--text-muted);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-dot-item:hover .nav-dot, .nav-dot-item.active .nav-dot {
+  background: var(--color-accent-violet);
+  border-color: var(--color-accent-violet);
+  box-shadow: 0 0 8px var(--color-accent-violet);
+}
+
+/* Utility classes */
+.gradient-text {
+  background: var(--gradient-glow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Social Icon Hover styling */
+.social-icon {
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+.social-icon:hover {
+  color: var(--color-accent-violet) !important;
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 8px var(--color-accent-violet));
+}
+
+/* Portfolio Header Responsiveness */
+.portfolio-header {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 80px 0;
+  z-index: 10;
+}
+
+.portfolio-header h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+/* On shorter screens (like laptops, viewport height <= 850px) */
+@media (max-height: 850px) {
+  .portfolio-header {
+    padding: 32px 0;
+  }
+  .portfolio-header h1 {
+    font-size: 2.75rem;
+  }
+  .nav-dot-container {
+    margin-top: 32px !important;
+    gap: 10px !important;
+  }
+}
+
+/* On very short screens (viewport height <= 700px) */
+@media (max-height: 700px) {
+  .portfolio-header {
+    padding: 16px 0;
+  }
+  .portfolio-header h1 {
+    font-size: 2.25rem;
+  }
+  .nav-dot-container {
+    margin-top: 20px !important;
+    gap: 8px !important;
+  }
+}
+
+/* Mobile responsive stacked mode */
+@media (max-width: 1023px) {
+  .portfolio-header {
+    position: relative;
+    height: auto;
+    padding: 40px 0;
+  }
+}
+
+
+/* Project Archive table row hover */
+.archive-tr:hover {
+  background-color: rgba(167, 139, 250, 0.03);
+}
+
+/* Layout structures */
+.portfolio-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 45%) 1fr;
+  gap: 48px;
+  min-height: 100vh;
+}
+
+.portfolio-main {
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+/* Responsive updates */
+@media (max-width: 1023px) {
+  .portfolio-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .portfolio-main {
+    padding: 24px 0 80px 0;
+    gap: 64px;
+  }
+  .nav-dot-container {
+    display: none !important;
+  }
+}
+

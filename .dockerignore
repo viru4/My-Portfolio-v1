@@ -1,0 +1,15 @@
+node_modules
+client/node_modules
+server/node_modules
+.git
+.gitignore
+.env
+server/.env
+*.log
+client/dist
+server/uploads/*
+!server/uploads/.gitkeep
+README.md
+*.md
+.cursor
+terminals
