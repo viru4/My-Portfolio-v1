@@ -9,7 +9,7 @@
   },
   "scripts": {
     "install-all": "concurrently \"npm install --prefix client\" \"npm install --prefix server\"",
-    "install:render": "npm install --include=dev --prefix client && npm install --prefix server",
+    "install:render": "npm install --prefix client && npm install --prefix server",
     "client": "npm run dev --prefix client",
     "server": "cross-env NODE_ENV=development npm run dev --prefix server",
     "dev": "cross-env NODE_ENV=development concurrently \"npm run client\" \"npm run server\"",
