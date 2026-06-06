@@ -40,6 +40,8 @@ app.use(helmet({
       fontSrc: ["'self'", 'https://fonts.gstatic.com'],
       imgSrc: ["'self'", 'data:', 'blob:'],
       connectSrc: ["'self'"],
+      formAction: ["'self'", 'mailto:'],
+      navigateTo: ["'self'", 'mailto:', 'https:'],
       objectSrc: ["'none'"],
       frameAncestors: ["'none'"]
     }

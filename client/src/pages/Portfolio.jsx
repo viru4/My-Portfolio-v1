@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ParticlesBg from '../components/ParticlesBg';
+import EmailLink from '../components/EmailLink';
 
 const safeFetchJson = async (url) => {
   try {
@@ -297,11 +298,17 @@ const Portfolio = () => {
                 </a>
               )}
               {social.email && (
-                <a href={`mailto:${social.email}`} title="Email" style={{ color: 'var(--text-muted)', display: 'inline-flex', transition: 'all 0.3s ease' }} className="social-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <EmailLink
+                  email={social.email}
+                  variant="icon"
+                  title="Email"
+                  style={{ color: 'var(--text-muted)', display: 'inline-flex', transition: 'all 0.3s ease' }}
+                  className="social-icon"
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm.445.361l4.932 3.997 4.932-3.997 5.4 6.71h-20.664l5.4-6.71zm10.309-.361l4.623-3.746v9.458l-4.623-5.712zm3.323-6.929l-10.7 8.666-10.7-8.666h21.4z" />
                   </svg>
-                </a>
+                </EmailLink>
               )}
             </div>
           </header>
@@ -500,13 +507,9 @@ const Portfolio = () => {
                   I am currently looking for internship and employment opportunities! My inbox is always open. Click below to say hello.
                 </p>
                 {social.email ? (
-                  <a
-                    href={`mailto:${social.email}`}
-                    className="glass-btn"
-                    aria-label={`Send email to ${social.email}`}
-                  >
+                  <EmailLink email={social.email} className="glass-btn" variant="button">
                     Say Hello ✉
-                  </a>
+                  </EmailLink>
                 ) : (
                   <span className="glass-btn" style={{ opacity: 0.6, cursor: 'not-allowed' }} aria-disabled="true">
                     Say Hello ✉
