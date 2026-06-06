@@ -493,13 +493,25 @@ const Portfolio = () => {
             </section>
 
             {/* Contact CTA */}
-            <section id="contact" style={{ textAlign: 'center' }} className="glass-card">
+            <section id="contact" style={{ textAlign: 'center' }} className="glass-card glass-card--static">
               <div style={{ padding: '40px' }}>
                 <h2 style={{ fontSize: '2rem', marginBottom: '16px' }} className="gradient-text">Let's build something together</h2>
                 <p style={{ maxWidth: '480px', margin: '0 auto 32px auto', color: '#a1a1b5' }}>
                   I am currently looking for internship and employment opportunities! My inbox is always open. Click below to say hello.
                 </p>
-                <a href={`mailto:${social.email}`} className="glass-btn">Say Hello ✉</a>
+                {social.email ? (
+                  <a
+                    href={`mailto:${social.email}`}
+                    className="glass-btn"
+                    aria-label={`Send email to ${social.email}`}
+                  >
+                    Say Hello ✉
+                  </a>
+                ) : (
+                  <span className="glass-btn" style={{ opacity: 0.6, cursor: 'not-allowed' }} aria-disabled="true">
+                    Say Hello ✉
+                  </span>
+                )}
               </div>
             </section>
 

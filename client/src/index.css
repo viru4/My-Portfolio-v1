@@ -98,6 +98,11 @@ a:hover {
   transform: translateY(-3px);
 }
 
+/* Cards with interactive controls — no lift (prevents hover flicker on buttons/links) */
+.glass-card--static:hover {
+  transform: none;
+}
+
 /* Shimmer Buttons */
 .glass-btn {
   background: var(--gradient-primary);
@@ -105,19 +110,37 @@ a:hover {
   font-weight: 600;
   border: none;
   border-radius: 30px;
-  padding: 10px 24px;
+  padding: 12px 28px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  z-index: 0;
+}
+
+a.glass-btn,
+a.glass-btn:hover,
+a.glass-btn:visited,
+a.glass-btn:active {
+  color: #000;
 }
 
 .glass-btn:hover {
   box-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
   transform: translateY(-1px);
+}
+
+.glass-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.35);
 }
 
 .glass-btn::after {
@@ -130,6 +153,8 @@ a:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: rotate(30deg);
   transition: none;
+  pointer-events: none;
+  z-index: -1;
 }
 
 .glass-btn:hover::after {
